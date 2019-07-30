@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>LaTeX-Einführung</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<img style="background:none; border:none; box-shadow:none;" src="latexlogo.png">
+				<h2>Einführung & Workshop</h2>
+				<aside class="notes">
+					<b>Inhalte</b>: Was ist das, warum macht man das? Beispiele zwischendurch; Übersicht Editoren; Dokumentstruktur; Formatierungen; Zitieren, Fußnoten, Literatur
+					<b>Praxisblock</b><br/>
+					<a href="https://github.com/hakimel/reveal.js#pdf-export">PDF-Export</a> möglich, einfach $baseurl/?print-pdf
+
+				</aside>
+				</section>
+				<section>
+					<h2>LaTeX - Was ist das und warum macht man das?</h2>
+					<ul>
+						<li>Markup Language</li>
+						<li>Textsatz</li>
+						<li>Fokussierung auf Content: Format und Aufbau definiert man nur ein einziges Mal</li>
+						<li>Standard bei wissenschaftlichen Papers</li>
+						<li>"Ästhetisch" (z.B. <a href="https://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge">https://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge</a>)</li>
+						<li>Von den CTAN-Fanboys: <a href="https://www.ctan.org/tex/"> Ten Reasons for TeX</a></li>
+					</ul>		
+					<aside class="notes">
+						<b>Markup Language</b>: "Auszeichungssprache, wie HTML; maschinenlesbar für Gliederung und Formatierung"; <b>Entwickelt</b> Anfang der 1980er;
+						<b>kein WYSIWYG</b>
+					</aside>
+				</section>
+				<section>
+					<h2>Word vs. LaTeX</h2>
+					<img style="background: none; border: none; box-shadow: none;" src="lernkurve.png"><br/>
+						<small style="font-size: 12px">https://commons.wikimedia.org/wiki/File:LaTeX-Word-Graph.svg</small>
+				</section>
+				<section>
+					<h2>Verbreitung</h2>
+					Untersuchung von ~ 2,3 Mio. Dokumenten in Scopus:
+					<blockquote cite="https://www.authorea.com/users/3/articles/107393-how-many-scholarly-articles-are-written-in-latex/_show_article" style="font-size: 28px; text-align: left">
+						Mathematics and Statistics: 151,085 (92% LaTeX = 138,998)<br/><br/>
+						Physics and Astronomy: 274,287 (60% LaTeX = 164,572)<br/><br/>
+						Computer Science: 255,916 (45% LaTeX = 115,162)
+					</blockquote>
+						<small style="font-size: 12px"><a href="https://www.authorea.com/users/3/articles/107393-how-many-scholarly-articles-are-written-in-latex/_show_article">https://www.authorea.com/users/3/articles/107393-how-many-scholarly-articles-are-written-in-latex/_show_article</a></small>
+					<aside class="notes">
+						Scopus = kostenpfl. Zitations- und Abstractdatenbank f. wissenschaftl. Journalbeiträge
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h2>Wie sieht sowas aus?</h2>
+						<pre style="line-height: 0.9em"><code style="font-size: 14px; max-height: 500px" class="lang-tex">
+%%Alles was in dieser Zeile folgt ist Kommentar
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\begin{document}
+\title{Erster Versuch}
+\author{John Doe} 
+\maketitle
+\section{Einleitung}
+Verfassen von schönem Text geht mit \LaTeX{} ganz leicht.
+\subsection{Formeln}
+Mit \LaTeX{} können aber auch sehr einfach Formeln editiert werden wie man am Beispiel von
+\begin{align}
+m &= \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{align}
+sieht.
+\end{document}
+						</code></pre>
+					</section>
+					<section>
+						<img width="70%" height="70%" src="latexexample.png"><br/>
+						<small style="font-size: 12px">https://homepage.univie.ac.at/manuel.graf/latex-intro</small>
+					</section>
+				</section>
+				<section>
+					<h2>Editoren</h2>
+					<ul>
+						<li><a href="https://www.texstudio.org/">TeXstudio</a> - der Klassiker</li>
+						<li><a href="http://vim-latex.sourceforge.net/">VimLaTeX</a> - für die Hardliner</li>
+						<li><a href="https://www.lyx.org/">LyX</a> - für die Noobs</li>
+						<li>und diverse Online-Editoren</li>
+					</ul><br/><br/>
+					Linux: Installation Basissystem über Paketmanager  (texlive-full > 4GB)<br/><br/>
+					Windows: Download und Installation  <a href="https://miktex.org/download">https://miktex.org/download</a> (ggf. Proxy über MiKTeX Console konfigurieren)
+					<aside class="notes">
+						<b>Empfehlung</b> für BA/MA: Speicherort Cloud Storage oder regelm. <b>Offsite-Backups</b> vom Projekt erstellen oder in privates <b>Git-Repo</b>
+						Vorteil: Versionskontrolle
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Dokumentstruktur</h2>
+						<ul>
+							<li>documentclass</li>
+							<li>packages</li>
+							<li>title</li>
+							<li>sections</li>
+							<li>toc</li>
+						</ul>
+					</section>
+					<section>
+						<h3>documentclass</h3>
+						<pre class="tex"><code>
+\documentclass[a4paper,11pt,oneside]{article}
+						</code></pre>
+						<p>10pt, 8.5x11, Portrait, einseitig, endgültig, kein Titelblatt (Titel auf der ersten Seite), eine Spalte, rechtsseitig, zentriert, komprimiert. <br />Weitere Klassen:</p>
+						<ul>
+							<li>report</li>
+							<li>book</li>
+							<li>letter</li>
+							<li>. . .</li>
+						</ul>
+					</section>
+					<section>
+						<h3>packages</h3>
+						<pre class="tex"><code>
+\usepackage[options]{paketname}
+
+%% Beispiele:
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{url}
+...
+						</code></pre>
+					</section>
+					<section>
+						<h3>title</h3>
+						<pre class="tex"><code>
+\title{Bachelorthesis}
+\author{Vorname Nachname}
+\maketitle
+						</code></pre>
+					</section>
+					<section>
+						<h3>sections</h3>
+						<pre class="tex"><code>
+\section{Absolute beginners}
+\subsection{The \latex source}
+\subsubsection{Hello World!}
+. . .
+\section{Document structure}
+						</code></pre>
+					</section>
+					<section>
+						<h4>toc</h4>
+						<pre class="tex"><code>\tableofcontents</code></pre>
+						<img src="tocexample.png"><br/>
+						<small style="font-size: 12px">https://www.andy-roberts.net/writing/latex/contents</small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Formatierungen</h2>
+						<ul>
+							<li>Bold, Italic, Underline</li>
+							<li>Tabellen</li>
+							<li>Bilder</li>
+							<li>Code Listings</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Bold, Italic, Underline</h4>
+						<pre class="tex"><code>
+Some of the \textbf{greatest}
+discoveries in \underline{science}
+were made by \textbf{\textit{accident}}.
+						</code></pre>
+						<img src="textformatexample.png"><br/>
+						<small style="font-size: 12px">https://www.overleaf.com/learn/latex/Bold,_italics_and_underlining</small>
+					</section>
+					<section>
+						<h4>Tabellen</h4>
+						<pre style="line-height: 0.9em"><code style="font-size: 14px; max-height: 500px" class="lang-tex">
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Merkmal} & \textbf{SOAP} & \textbf{NVP}\\
+\hline
+\hline
+Objektorientiert & 9 & 6\\
+\hline
+Sicherheit & 9 & 8\\
+%% [ ... ]
+\hline
+Standardisierung & 9 & 6 \\
+\hline
+\hline
+Ergebnis & 55 & 48\\
+\hline
+\end{tabular}
+\caption{Gegenüberstellung SOAP und NVP (eigene Untersuchung)}
+\label{tab:soapvsnvp}
+\end{table}
+						</code></pre>
+					</section>
+					<section>
+						<img width="60%" height="60%" src="tableexample.jpg"><br/>
+						<a href="https://de.overleaf.com/learn/latex/Tables">https://de.overleaf.com/learn/latex/Tables</a>
+						<a href="https://www.tablesgenerator.com/">https://www.tablesgenerator.com/</a>
+					</section>
+					<section>
+						<h4>Bilder</h4>
+						<pre style="line-height: 1.5em"><code style="font-size: 18px; max-height: 500px" g-tex">
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\textwidth]{bilder/phpaufruf}
+\caption{PHP-Aufrufschema, expliziter Aufruf (eigene Darstellung)}
+\label{fig:phpaufrufexplizit}
+\end{figure}
+						</code></pre>
+					</section>
+					<section>
+						<img width="60%" height="60%" src="bildexample.jpg"><br/>
+					</section>
+					<section>
+						<h4> Code Listings</h4>
+						<pre style="line-height: 1.5em" class="tex"><code style="font-size: 18px; max-height: 500px">
+\begin{lstlisting}[caption=TemplatePower-Beispiel main.php]{tplphp}
+<?php
+include_once("./class.TemplatePower.inc.php");
+$tpl = new TemplatePower("./main.tpl");
+$tpl->prepare();
+$tpl->assign("salutation", "Willkommen");
+$tpl->printToScreen();
+?>
+\end{lstlisting}
+						</code></pre>
+					</section>
+					<section>
+						<img width="60%" height="60%" src="listingexample.jpg"><br/>
+					</section>
+					</section>
+				</section>
+				<section>
+					<section><h2>Zitieren, Fußnoten, Literaturverzeichnis</h2></section>
+					<section><h3>"Richtig" Zitieren</h3>
+						<a href="https://www.scribbr.de/richtig-zitieren/uebersicht-zitierstile/">https://www.scribbr.de/richtig-zitieren/uebersicht-zitierstile/</a><br/><br/>
+						<a href="https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_bibliographystyle">https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_bibliographystyle</a><br/><br/>
+						<a href="https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib">https://www.overleaf.com/learn/latex/Bibliography_management_with_natbib</a>
+						<pre><code class="tex">
+\bibliographystyle{dinat}
+						</code></pre>
+					</section>
+					<section><h3>Zitate</h3>
+						<pre class="tex"><code>
+\begin{quotation}
+\textit{Unter dem Begriff E-Payment versteht man die
+elektronische Abwicklung von Zahlungsvorgängen. [. . .]}
+\end{quotation}
+						</code></pre>
+						<img width="90%" height="90%" src="citeexample.png"><br/>
+					</section>
+					<section><h3>Fußnoten</h3>
+						<pre class="tex"><code>
+In Deutschland existieren zur Zeit über
+40 Zahlungsverfahren.\footnote{Vgl.: \cite[S. 73f.]{ecomm}}
+Im Folgendenden werden die klassischen Verfahren [. . .]
+						</code></pre>
+						<img width="90%" height="90%" src="footnoteexample.png"><br/>
+					</section>
+					<section>
+						<h3>Literaturverzeichnis</h3>
+						<pre><code class="tex">
+\bibliography{literatur}
+%% bezieht sich auf die Datei literatur.bib
+						</code></pre>
+					</section>
+					<section>
+						<h5>literatur.bib</h5>
+						<pre><code class="tex">
+@BOOK{ecomm,
+  AUTHOR	=	"Dr. Ernst Stahl and others",
+  PUBLISHER	=	"Universitätsverlag Regensburg",
+  YEAR		=  	2008,
+  ADDRESS	=	"Regensburg"
+  TITLE 	=	"E-Commerce-Leitfaden. Erfolgreich
+    im elektronischen Handel",
+ }
+						</code></pre>
+						<img width="90%" height="90%" src="literaturexample.jpg"><br/>
+					</section>
+				</section>
+				<section data-background-image="latexlogo.png" data-background-opacity="0.1">
+					<h1>Praxis</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
