@@ -1,6 +1,6 @@
 
 
-## Get in touch with me:
+## Thorben Theil
 
 [![LinkedIn Logo](https://img.icons8.com/color/24/000000/linkedin.png) Linkedin](https://www.linkedin.com/in/thorbentheil)
 
