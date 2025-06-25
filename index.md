@@ -1,5 +1,5 @@
-### Content
+### Thorben Theil
 
-[Latex Intro & Workshop](https://theiltho.github.io/latex/)
+[![LinkedIn Logo](https://img.icons8.com/color/24/000000/linkedin.png) Linkedin](https://www.linkedin.com/in/thorbentheil)
 
-Hints: Hit s to open speaker view (allow pop-ups); use space to go to next slide; hit ESC to get an overview
+[![GitHub Logo](https://img.icons8.com/color/24/000000/github.png) Github](https://github.com/theiltho)
