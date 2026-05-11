@@ -1,4 +1,4 @@
-**Get in touch with me:**
+### Get in touch with me
 
 [![Linkedin](images/linkedin-badge.png)](https://www.linkedin.com/in/thorbentheil)
 
