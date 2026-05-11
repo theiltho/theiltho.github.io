@@ -4,5 +4,5 @@
 
 [![Github](images/github-badge.png)](https://github.com/theiltho)
 
-![Threema ID: YD6TJ7MB](images/threema-badge.png)
+[![Threema ID: YD6TJ7MB](images/threema-badge.png)](https://threema.id/YD6TJ7MB)
 
