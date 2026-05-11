@@ -4,9 +4,9 @@
 
 **Get in touch with me:**
 
-[![LinkedIn Logo](images/linkedin.png) Linkedin](https://www.linkedin.com/in/thorbentheil)
+<a href="https://www.linkedin.com/in/thorbentheil"><img src="images/linkedin.png" alt="LinkedIn Logo" height="50" align="middle"> Linkedin</a>
 
-[![GitHub Logo](images/github.png) Github](https://github.com/theiltho)
+<a href="https://github.com/theiltho"><img src="images/github.png" alt="GitHub Logo" height="50" align="middle"> Github</a>
 
-![threema id](images/threema.png "Threema ID: YD6TJ7MB") Threema ID: YD6TJ7MB
+<img src="images/threema.png" alt="threema id" title="Threema ID: YD6TJ7MB" height="50" align="middle"> Threema ID: YD6TJ7MB
 
