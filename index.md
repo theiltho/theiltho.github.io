@@ -1,5 +1,3 @@
-### Get in touch with me
-
 [![Linkedin](images/linkedin-badge.png)](https://www.linkedin.com/in/thorbentheil)
 
 [![Github](images/github-badge.png)](https://github.com/theiltho)
