@@ -1,7 +1,3 @@
-
-
-## Thorben Theil
-
 **Get in touch with me:**
 
 <a href="https://www.linkedin.com/in/thorbentheil"><img src="images/linkedin.png" alt="LinkedIn Logo" height="50" align="middle"> Linkedin</a>
