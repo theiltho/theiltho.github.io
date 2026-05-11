@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" type="text/css" href="{{ '/assets/css/print.css' | relative_url }}" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23222'/><text x='50' y='68' font-size='52' font-family='system-ui,sans-serif' font-weight='700' text-anchor='middle' fill='%23fff'>TT</text></svg>">
 {% seo %}
     {% include head-custom.html %}
   </head>
@@ -19,8 +16,10 @@
       <div class="inner">
 
         <header>
-          <!--<h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>-->
+          <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+          {% if page.description or site.description or site.github.project_tagline %}
           <h2>{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+          {% endif %}
         </header>
         <section id="downloads" class="clearfix">
           {% if site.show_downloads %}
@@ -34,8 +33,10 @@
           <a href="{{ site.github.owner_url }}" id="view-on-github" class="button"><span>View on GitHub</span></a>
 	  {% endif %}
 	{% endif %}
+          {% if site.show_downloads %}
+          <hr>
+          {% endif %}
         </section>
-        <hr>
         <section id="main_content">
           {{ content }}
         </section>
